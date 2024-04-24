@@ -1,0 +1,43 @@
+name: Publish GH-Pages
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - publish
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Changes
+        uses: actions/checkout@v2
+
+      - name: Checkout Changes
+        uses: actions/checkout@v2
+        with:
+          repository: 'damienomurchu/damienomurchu-v2.github.io.content'
+          token: ${{ secrets.PUBLISH_TOKEN }}
+          path: damienomurchu-v2.github.io.content/content
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build Site Files
+        run: hugo --minify
+
+      - name: Deploy to GH-Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PUBLISH_TOKEN }}
+          external_repository: damienomurchu/damienomurchu-v2.github.io
+          publish_branch: main  
+          publish_dir: ./public
+          user_name: 'gh-actions[publish-bot]'
+          user_email: 'gh-actions[publish-bot]@users.noreply.github.com'
+          commit_message: ${{ github.event.head_commit.message }}
