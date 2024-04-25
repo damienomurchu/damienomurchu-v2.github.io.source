@@ -20,9 +20,9 @@ content/update/local: content/clean content/fetch/local
 	@rm -rf ./content/.git
 
 # serve dev site
-site/dev: content/get
+site/dev: content/update/local
 	hugo server -D --disableFastRender
 
 # serve site
-site/server: content/get
+site/server: content/update/local
 	hugo server --disableFastRender
