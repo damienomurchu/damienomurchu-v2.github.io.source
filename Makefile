@@ -13,7 +13,7 @@ content/update: content/clean content/fetch
 # fetch content
 content/fetch/local:
 	@mkdir content
-	@cp -r ../damienomurchu-v2.github.io.content content
+	@cp -r ../damienomurchu-v2.github.io.content/* content
   
 # update content
 content/update/local: content/clean content/fetch/local
