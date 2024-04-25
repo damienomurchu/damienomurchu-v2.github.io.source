@@ -1,6 +1,6 @@
 # damienomurchu-v2.github.io.source
 
-Site files used to build motleyengineer.github.io (to edit/ update content go to damienomurchu-v2.github.io.content).
+Site files used to build damienomurchu-v2.github.io (to edit/ update content go to damienomurchu-v2.github.io.content).
 
 
 ## Content
