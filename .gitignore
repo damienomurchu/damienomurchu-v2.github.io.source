@@ -1,2 +1,3 @@
 .hugo*
 content
+resources/_gen
