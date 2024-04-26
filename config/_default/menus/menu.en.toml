@@ -1,16 +1,16 @@
 [[main]]
-  name = "Home"
+  name = "home"
   url = ""
   weight = -110
 
 [[main]]
-  name = "Archives"
+  name = "archives"
   url = "post/rich-content/"
   weight = -109
 
 # Submenus are done this way: parent -> identifier
 [[main]]
-  name = "Links"
+  name = "links"
   identifier = "Links"
   weight = -108
 [[main]]
@@ -23,7 +23,7 @@
   url = "https://twitter.com/"
 
 [[main]]
-  name = "About"
+  name = "about"
   url = "about/"
   weight = -107
 
